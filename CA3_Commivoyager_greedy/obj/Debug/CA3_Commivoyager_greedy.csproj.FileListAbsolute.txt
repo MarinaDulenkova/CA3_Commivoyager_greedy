@@ -1,0 +1,10 @@
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\bin\Debug\CA3_Commivoyager_greedy.exe.config
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\bin\Debug\CA3_Commivoyager_greedy.exe
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\bin\Debug\CA3_Commivoyager_greedy.pdb
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.csprojAssemblyReference.cache
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.fmMain.resources
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.Properties.Resources.resources
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.csproj.GenerateResource.cache
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.csproj.CoreCompileInputs.cache
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.exe
+D:\Универ\Лабы\Комбинаторные алгоритмы\CA3_Commivoyager_greedy\CA3_Commivoyager_greedy\obj\Debug\CA3_Commivoyager_greedy.pdb

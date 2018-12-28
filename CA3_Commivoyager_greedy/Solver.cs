@@ -124,7 +124,7 @@ namespace CA3_Commivoyager_greedy
         /// <param name="pth">Итоговый путь</param>
         /// <param name="time">Время работы алгоритма</param>
         /// <returns>Длина пути</returns>
-        public int SolvingTaskWithRecursion(out int[] pth, out TimeSpan time, Matrix matrix)
+        public int SolveTaskWithRecursion(out int[] pth, out TimeSpan time, Matrix matrix)
         {
             DateTime start = DateTime.Now;
 

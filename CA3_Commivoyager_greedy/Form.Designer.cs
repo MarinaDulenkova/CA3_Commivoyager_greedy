@@ -32,26 +32,41 @@
             this.gbExact = new System.Windows.Forms.GroupBox();
             this.gbGreedy = new System.Windows.Forms.GroupBox();
             this.btnRandom = new System.Windows.Forms.Button();
-            this.btnTask = new System.Windows.Forms.Button();
+            this.btnInfo = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
             this.nudSize = new System.Windows.Forms.NumericUpDown();
+            this.lblExact = new System.Windows.Forms.Label();
+            this.lblGreedy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatrix)).BeginInit();
+            this.gbExact.SuspendLayout();
+            this.gbGreedy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSize)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvMatrix
             // 
+            this.dgvMatrix.AllowUserToAddRows = false;
+            this.dgvMatrix.AllowUserToDeleteRows = false;
+            this.dgvMatrix.AllowUserToOrderColumns = true;
+            this.dgvMatrix.AllowUserToResizeColumns = false;
+            this.dgvMatrix.AllowUserToResizeRows = false;
             this.dgvMatrix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvMatrix.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMatrix.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvMatrix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMatrix.ColumnHeadersVisible = false;
             this.dgvMatrix.Location = new System.Drawing.Point(12, 12);
             this.dgvMatrix.Name = "dgvMatrix";
+            this.dgvMatrix.RowHeadersVisible = false;
+            this.dgvMatrix.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvMatrix.Size = new System.Drawing.Size(367, 367);
             this.dgvMatrix.TabIndex = 0;
+            this.dgvMatrix.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatrix_CellValueChanged);
             // 
             // gbExact
             // 
+            this.gbExact.Controls.Add(this.lblExact);
             this.gbExact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gbExact.Location = new System.Drawing.Point(386, 12);
             this.gbExact.Name = "gbExact";
@@ -62,6 +77,7 @@
             // 
             // gbGreedy
             // 
+            this.gbGreedy.Controls.Add(this.lblGreedy);
             this.gbGreedy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gbGreedy.Location = new System.Drawing.Point(386, 126);
             this.gbGreedy.Name = "gbGreedy";
@@ -80,17 +96,19 @@
             this.btnRandom.TabIndex = 3;
             this.btnRandom.Text = "Random";
             this.btnRandom.UseVisualStyleBackColor = false;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
-            // btnTask
+            // btnInfo
             // 
-            this.btnTask.BackColor = System.Drawing.SystemColors.Info;
-            this.btnTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnTask.Location = new System.Drawing.Point(465, 341);
-            this.btnTask.Name = "btnTask";
-            this.btnTask.Size = new System.Drawing.Size(40, 38);
-            this.btnTask.TabIndex = 4;
-            this.btnTask.Text = "?";
-            this.btnTask.UseVisualStyleBackColor = false;
+            this.btnInfo.BackColor = System.Drawing.SystemColors.Info;
+            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnInfo.Location = new System.Drawing.Point(465, 341);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(40, 38);
+            this.btnInfo.TabIndex = 4;
+            this.btnInfo.Text = "?";
+            this.btnInfo.UseVisualStyleBackColor = false;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnGo
             // 
@@ -102,6 +120,7 @@
             this.btnGo.TabIndex = 5;
             this.btnGo.Text = "GO";
             this.btnGo.UseVisualStyleBackColor = false;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // nudSize
             // 
@@ -126,6 +145,23 @@
             0,
             0,
             0});
+            this.nudSize.ValueChanged += new System.EventHandler(this.nudSize_ValueChanged);
+            // 
+            // lblExact
+            // 
+            this.lblExact.AutoSize = true;
+            this.lblExact.Location = new System.Drawing.Point(6, 37);
+            this.lblExact.Name = "lblExact";
+            this.lblExact.Size = new System.Drawing.Size(0, 20);
+            this.lblExact.TabIndex = 0;
+            // 
+            // lblGreedy
+            // 
+            this.lblGreedy.AutoSize = true;
+            this.lblGreedy.Location = new System.Drawing.Point(6, 39);
+            this.lblGreedy.Name = "lblGreedy";
+            this.lblGreedy.Size = new System.Drawing.Size(0, 20);
+            this.lblGreedy.TabIndex = 0;
             // 
             // fmMain
             // 
@@ -135,7 +171,7 @@
             this.ClientSize = new System.Drawing.Size(606, 391);
             this.Controls.Add(this.nudSize);
             this.Controls.Add(this.btnGo);
-            this.Controls.Add(this.btnTask);
+            this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.gbGreedy);
             this.Controls.Add(this.gbExact);
@@ -144,7 +180,12 @@
             this.Name = "fmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Commivoyager dilemma: exact and greedy algorythms";
+            this.Load += new System.EventHandler(this.fmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMatrix)).EndInit();
+            this.gbExact.ResumeLayout(false);
+            this.gbExact.PerformLayout();
+            this.gbGreedy.ResumeLayout(false);
+            this.gbGreedy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSize)).EndInit();
             this.ResumeLayout(false);
 
@@ -156,9 +197,11 @@
         private System.Windows.Forms.GroupBox gbExact;
         private System.Windows.Forms.GroupBox gbGreedy;
         private System.Windows.Forms.Button btnRandom;
-        private System.Windows.Forms.Button btnTask;
+        private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.NumericUpDown nudSize;
+        private System.Windows.Forms.Label lblExact;
+        private System.Windows.Forms.Label lblGreedy;
     }
 }
 
