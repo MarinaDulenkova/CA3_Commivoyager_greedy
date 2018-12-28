@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CA3_Commivoyager_greedy
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class fmMain : System.Windows.Forms.Form
     {
-        public Form()
+        public fmMain()
         {
             InitializeComponent();
         }

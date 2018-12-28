@@ -16,7 +16,7 @@ namespace CA3_Commivoyager_greedy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new fmMain());
         }
     }
 }
