@@ -83,5 +83,62 @@ namespace CA3_Commivoyager_greedy
             pth = pthRes;
             return lengthMin;
         }
+
+
+        /// <summary>
+        /// Точный алгоритм (рекурсия)
+        /// </summary>
+        /// <param name="i">Текущий город</param>
+        /// <param name="k">Кол-во пройденных городов</param>
+        /// <param name="lenght">Длина пройденного пути</param>
+        /// <param name="matrix">Матрица с длинами пути между городами</param>
+        private void RecursiveMethod(int i, int k, int lenght, Matrix matrix)
+        {
+            if (k >= matrix.size - 1)
+            {
+                if (lenght + matrix.matrix[i, 0] < lengthMin)
+                {
+                    lengthMin = lenght + matrix.matrix[i, 0];
+                    pth.CopyTo(pthRes, 0);
+                }
+            }
+            else
+            {
+                for (int j = 0; j <= matrix.size; ++j)
+                {
+                    if (notVisited.Contains(j))
+                    {
+                        notVisited.Remove(j);
+                        pth[k + 1] = j;
+                        RecursiveMethod(j, k + 1, lenght + matrix.matrix[i, j], matrix);
+                        notVisited.Add(j);
+                        pth[k + 1] = 0;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Решение задачи с помощью рекурсивного алгоритма
+        /// </summary>
+        /// <param name="pth">Итоговый путь</param>
+        /// <param name="time">Время работы алгоритма</param>
+        /// <returns>Длина пути</returns>
+        public int SolvingTaskWithRecursion(out int[] pth, out TimeSpan time, Matrix matrix)
+        {
+            DateTime start = DateTime.Now;
+
+            for (int i = 1; i < matrix.size; ++i)
+                notVisited.Add(i);
+            lengthMin = MAX_VALUE;
+            pthRes = new int[matrix.size];
+
+            RecursiveMethod(0, 0, 0, matrix);
+
+            time = DateTime.Now - start;
+
+            pth = pthRes;
+            return lengthMin;
+        }
     }
 }
